@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI-Powered Full-Stack Task Manager
 
-## Getting Started
+This is a complete Next.js application featuring user authentication, task management, a password reset flow with OTP, and an AI-powered chatbot for managing tasks via natural language.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Full-Stack with Next.js App Router:** Frontend and backend in one place.
+- **Secure User Authentication:** Using NextAuth.js for credentials-based login.
+- **Complete Task Management:** CRUD (Create, Read, Update, Delete) operations for user-specific tasks.
+- **Password Reset:** Secure OTP generation with Redis and email delivery via Resend.
+- **AI Chatbot:** Integrated OpenAI's GPT model to manage tasks using commands like "Add a task to do laundry tomorrow at 5pm".
+- **Modern UI:** Built with the beautiful and accessible `shadcn/ui` components.
+- **ORM & Database:** Prisma with a PostgreSQL database hosted on Neon.
+- **Deployment Ready:** Configured for easy, free deployment on Vercel.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚙️ Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Framework:** Next.js 14+ (App Router)
+- **UI Library:** React, Tailwind CSS, shadcn/ui
+- **Authentication:** NextAuth.js
+- **Database:** PostgreSQL (Neon)
+- **ORM:** Prisma
+- **In-memory Store:** Redis (Upstash) for OTPs
+- **Email Service:** Resend
+- **AI:** OpenAI (ChatGPT)
