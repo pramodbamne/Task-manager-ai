@@ -19,7 +19,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { PlusCircle } from 'lucide-react';
 import { TaskFormDialog } from './TaskFormDialog';
-import { Task } from '@prisma/client';
+
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];

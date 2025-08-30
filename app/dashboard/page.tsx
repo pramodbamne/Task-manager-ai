@@ -1,4 +1,4 @@
-// FILE: /app/dashboard/page.tsx (Corrected Floating Toggle UI)
+// FILE: /app/dashboard/page.tsx (Corrected to remove isLoading state)
 
 'use client';
 
@@ -18,11 +18,9 @@ export default function DashboardPage() {
   const { data: session, status } = useSession();
   const router = useRouter();
   const [tasks, setTasks] = useState<Task[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
   const [isAiAssistantOpen, setIsAiAssistantOpen] = useState(false);
 
   const fetchTasks = async () => {
-    setIsLoading(true);
     try {
       const response = await fetch('/api/tasks');
       if (!response.ok) {
@@ -37,8 +35,6 @@ export default function DashboardPage() {
     } catch (error) {
       if (error instanceof Error && error.message.includes('401')) return;
       toast.error(error instanceof Error ? error.message : 'An unknown error occurred');
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -94,9 +90,8 @@ export default function DashboardPage() {
         </Card>
       </main>
 
-      {/* --- FLOATING AI ASSISTANT (Corrected Implementation) --- */}
+      {/* --- FLOATING AI ASSISTANT --- */}
       <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4">
-        {/* The Chat Window */}
         {isAiAssistantOpen && (
            <div className="transition-all duration-300 ease-in-out">
              <Card className="w-[380px] h-[500px] shadow-2xl flex flex-col">
@@ -116,7 +111,6 @@ export default function DashboardPage() {
            </div>
         )}
 
-        {/* The Toggle Button */}
         <Button
           onClick={() => setIsAiAssistantOpen(!isAiAssistantOpen)}
           className="rounded-full w-16 h-16 bg-blue-600 hover:bg-blue-700 shadow-xl flex items-center justify-center"

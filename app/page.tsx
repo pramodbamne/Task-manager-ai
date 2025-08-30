@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Bot, CheckSquare, LogIn } from 'lucide-react';
+import { Bot, LogIn } from 'lucide-react';
 
 export default function HomePage() {
   return (
